@@ -1,5 +1,13 @@
 <link rel="stylesheet" href="tlfmw.css">
-<div id="tlfmw" apikey="" username="tenonyize"></div>
+<div id="tlfmw" apikey="" username=""></div>
+<script>
+    const params = new URLSearchParams(window.location.search)
+    const key = params.get("apikey")
+    const user = params.get("username")
+    const div = document.getElementById("tlfmw")
+    div.setAttribute("apikey",key)
+    div.setAttribute("username",user)
+</script>
 <script src="tlfmw.js"></script>
 <style>
     body,html {
