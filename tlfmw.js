@@ -1,4 +1,3 @@
-
 (()=>{
     const maindiv = document.querySelector("div#tlfmw")
 
@@ -40,11 +39,14 @@
             return response.json();
         }).then(renderWidget)
     }
+
+    let recent_data
     
     function renderWidget(data) {
         let nowplaying
-        console.log(data)
-        data.recenttracks.track.forEach(v => {if (v["@attr"] && v["@attr"].nowplaying) nowplaying = v});
+        recent_data = data;
+        // console.log(data)
+        data.recenttracks.track.forEach(v => {if (v["@attr"] && v["@attr"].nowplaying) nowplaying = nowplaying??v});
     
         
         if (nowplaying) {
@@ -56,18 +58,13 @@
             document.querySelectorAll("div#tlfmw .tlfmw-nowplaying h1.tlfmw-header>span").forEach((v,k)=>{if (k!=1) v.innerText=nowplaying.name})
             document.querySelector("div#tlfmw .tlfmw-cover").src = nowplaying.image[2]["#text"]
             document.querySelector("div#tlfmw .tlfmw-bg").src = nowplaying.image[0]["#text"]
-                
+            
             document.querySelectorAll("div#tlfmw .tlfmw-nowplaying .tlfmw-header").forEach((v,k)=>{
-                if (isTP && isTP!=k) 
-                    v.classList.add("tlfmw-toki-pona")
-                else
-                    v.classList.remove("tlfmw-toki-pona")
+                if (isTP && isTP!=k) v.classList.add("tlfmw-toki-pona")
+                else v.classList.remove("tlfmw-toki-pona")
                 
-                if (v.clientWidth<v.scrollWidth) 
-                    v.classList.add("tlfmw-animate")
-                else
-                    v.classList.remove("tlfmw-animate")
-                
+                v.classList.remove("tlfmw-animate")
+                if (v.clientWidth<v.scrollWidth) v.classList.add("tlfmw-animate")
             })
 
             document.querySelector("div#tlfmw .tlfmw-nowplaying").style.display = null
@@ -115,5 +112,4 @@
     
     updateWidget()
     setInterval(updateWidget,15000)
-
 })()
