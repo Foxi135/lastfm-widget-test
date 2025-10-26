@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="tlfmw.css">
+<link rel="stylesheet" href="tlfmw.css"/>
+<i id="msg" style="color: white;"><u>t</u>enony's <span style="color:#f77"><u>l</u>ast.<u>fm</u></span> <u>w</u>idget<br>Usage: ?apikey=[API KEY]&username=[USERNAME]<br><a style="color:aaf" href="https://www.last.fm/api/account/create">Create a last.fm API account</a></i>
 <div id="tlfmw" apikey="" username=""></div>
 <script>
     const params = new URLSearchParams(window.location.search)
@@ -7,6 +8,9 @@
     const div = document.getElementById("tlfmw")
     div.setAttribute("apikey",key)
     div.setAttribute("username",user)
+    console.log(key,user)
+    if (key&&user) document.getElementById("msg").style.display = "none";
+    else div.style.display = "none"
 </script>
 <script src="tlfmw.js"></script>
 <style>
