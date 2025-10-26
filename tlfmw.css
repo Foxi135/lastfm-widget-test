@@ -1,0 +1,115 @@
+#tlfmw {
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+#tlfmw {
+    width: 480px;
+    height: 170px;
+}
+
+.tlfmw-font {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+.tlfmw-bg {
+    width: 200%;
+    left: -50%;
+    top: -50%;
+    position: absolute;
+    filter: blur(50px) opacity(0.5);
+}
+.tlfmw-nowplaying h3 {
+    margin: 20px;
+    margin-bottom: 0px;
+    filter: opacity(0.5);
+}
+.tlfmw-nowplaying .tlfmw-header {
+    margin: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 90%;
+}
+.tlfmw-nowplaying .tlfmw-header.tlfmw-animate > span {
+  display: inline-block;
+  padding-left: 0;
+  animation: scroll-left 15s linear infinite;
+}
+.tlfmw-nowplaying .tlfmw-header.tlfmw-animate > span {
+  display: inline-block;
+  padding-left: 0;
+  animation: scroll-left 15s linear infinite;
+}
+.tlfmw-nowplaying .tlfmw-header:not(.tlfmw-animate) > span:not(:first-child) {
+  display: none
+}
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% - 50px)); }
+}
+.tlfmw-cover {
+    position: static;
+    align-self: center;
+    height: 70%;
+    border-radius: 5px;
+}
+.tlfmw-container {
+    overflow-y: scroll;
+    height: 100%;
+    scrollbar-width: none;
+    z-index: 2;
+    position: relative;
+}
+.tlfmw-nowplaying {
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+}
+.tlfmw-nowplaying-rows {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.tlfmw-list {
+   height: 100%;
+   padding: 10px;
+   padding-bottom: 10px;
+   font-size: small;
+}
+.tlfmw-list > div {
+    height: 60px;
+    display: flex; 
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.tlfmw-list > div > img {
+    height: 100%;
+}
+.tlfmw-list > div > span {
+    text-align: center;
+    margin-left: 20px;
+}
+.tlfmw-list > div > span:nth-child(2) {
+    flex-grow: 1;
+    text-align: left;
+}
+.tlfmw-list > div > span:nth-child(3) {
+    margin-right: 10px;
+    text-align: right;
+    filter: opacity(0.5);
+}
+@font-face {
+    font-family: FairfaxHD;
+    src: url("FairfaxPonaHD.ttf");
+}
+.tlfmw-toki-pona {
+    font-family: FairfaxHD;
+}
