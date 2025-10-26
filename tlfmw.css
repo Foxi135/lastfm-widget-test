@@ -6,8 +6,8 @@
 }
 
 #tlfmw {
-    width: 480px;
-    height: 170px;
+    width: 100%;
+    height: 100%;
 }
 
 .tlfmw-font {
@@ -112,4 +112,5 @@
 }
 .tlfmw-toki-pona {
     font-family: FairfaxHD;
+
 }
